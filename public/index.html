@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" /> -  
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Calcutor App</title>
+
+    <script>
+      //validates if the number you enter is zero equals or null it
+      //otherwise it is concatenating it
+      function AddNumber(number, InputScreen) {
+        if ((number.value == null) | (number.value == "0"))
+        number.value = InputScreen;
+        else number.value += InputScreen;
+      }
+
+      //delete the last digit of the number
+      function DeleteNumber(valor) {
+        valor.value = valor.value.substring(0, valor.value.length - 1);
+      }
+
+      //performs the calculation you have on the form
+      function calculateNumber(form) {
+        form.calculator.value = eval(form.calculator.value);
+      }
+    </script>    
+  </head>
+
+  <body>
+    <Calculator>
+      <center>
+        <form>
+          <table>
+            <tr>
+              <td colspan="5">
+                <input
+                  type="text"
+                  class="calculator"
+                  name="calculator"
+                  value="0"
+                  size="31"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="7"
+                  name="id_7"
+                  onclick="AddNumber(form.calculator, '7')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="8"
+                  name="id_8"
+                  onclick="AddNumber(form.calculator, '8')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="9 "
+                  name="id_9"
+                  onclick="AddNumber(form.calculator, '9')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="/ "
+                  name="divide"
+                  onclick="AddNumber(form.calculator, '/')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="<"
+                  name="delete"
+                  onclick="DeleteNumber(form.calculator)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="4"
+                  name="id_4"
+                  onclick="AddNumber(form.calculator, '4')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="5"
+                  name="id_5"
+                  onclick="AddNumber(form.calculator, '5')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="6 "
+                  name="id_6"
+                  onclick="AddNumber(form.calculator, '6')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="* "
+                  name="multiply"
+                  onclick="AddNumber(form.calculator, '*')"
+                />
+              </td>
+              <td rowspan="3">
+                <input
+                  class="equal"
+                  type="button"
+                  value="="
+                  name="equal"
+                  onclick="calculateNumber(form)"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="1"
+                  name="id_1"
+                  onclick="AddNumber(form.calculator, '1')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="2"
+                  name="id_2"
+                  onclick="AddNumber(form.calculator, '2')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="3 "
+                  name="id_3"
+                  onclick="AddNumber(form.calculator, '3')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="- "
+                  name="less"
+                  onclick="AddNumber(form.calculator, '-')"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value=". "
+                  name="point"
+                  onclick="AddNumber(form.calculator, '.')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="0"
+                  name="id_0"
+                  onclick="AddNumber(form.calculator, '0')"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="C"
+                  name="cancel"
+                  onclick="form.calculator.value = 0"
+                />
+              </td>
+              <td>
+                <input
+                  class="button"
+                  type="button"
+                  value="+"
+                  name="sum"
+                  onclick="AddNumber(form.calculator, '+')"
+                />
+              </td>
+            </tr>
+          </table>
+        </form>
+      </center>
+    </Calculator>    
+  </body>
+</html>
